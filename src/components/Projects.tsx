@@ -19,23 +19,18 @@ export default function Projects() {
               Featured <span className="gradient-text">Projects</span>
             </>
           }
-          subtitle="Tilt & explore — production apps and engineering projects in 3D."
+          subtitle="Live demos and production apps — click to visit."
         />
 
         <div className="grid gap-6 md:grid-cols-2">
-          {profile.projects.map((project, i) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50, rotateX: 20 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ delay: i * 0.12, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
-              style={{ transformPerspective: 1200 }}
-            >
+          {profile.projects.map((project, i) => {
+            const inner = (
               <TiltCard
                 maxTilt={14}
                 glow
-                className="group h-full overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-cyan/40"
+                className={`group h-full overflow-hidden rounded-2xl border border-border bg-surface transition-colors ${
+                  project.url ? 'hover:border-cyan/40 cursor-pointer' : 'hover:border-cyan/40'
+                }`}
               >
                 <div
                   onMouseEnter={() => setHovered(i)}
@@ -46,22 +41,56 @@ export default function Projects() {
                     className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 transition-opacity duration-500 group-hover:opacity-100`}
                   />
                   <div className="relative p-6">
-                    <div className="mb-4 flex items-start justify-between">
-                      <h3 className="font-display text-xl font-bold text-text">{project.title}</h3>
-                      <motion.div
-                        animate={{ rotate: hovered === i ? 45 : 0, scale: hovered === i ? 1.2 : 1 }}
-                        className="text-muted transition group-hover:text-cyan"
-                      >
-                        <ExternalLink className="h-5 w-5" />
-                      </motion.div>
+                    <div className="mb-4 flex items-start justify-between gap-3">
+                      <h3 className="font-display text-xl font-bold text-text group-hover:text-cyan transition-colors">
+                        {project.title}
+                      </h3>
+                      {project.url && (
+                        <motion.div
+                          animate={{ rotate: hovered === i ? 45 : 0, scale: hovered === i ? 1.2 : 1 }}
+                          className="shrink-0 text-muted transition group-hover:text-cyan"
+                        >
+                          <ExternalLink className="h-5 w-5" />
+                        </motion.div>
+                      )}
                     </div>
                     <p className="mb-5 text-sm leading-relaxed text-muted">{project.description}</p>
                     <TechIconRow tools={project.tags} size="md" gap="gap-2" />
+                    {project.url && (
+                      <p className="mt-4 truncate font-mono text-[10px] text-cyan/60 group-hover:text-cyan/90">
+                        {project.url.replace(/^https?:\/\//, '')}
+                      </p>
+                    )}
                   </div>
                 </div>
               </TiltCard>
-            </motion.div>
-          ))}
+            );
+
+            return (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 50, rotateX: 20 }}
+                whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: i * 0.12, duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
+                style={{ transformPerspective: 1200 }}
+              >
+                {project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block h-full"
+                    aria-label={`Visit ${project.title}`}
+                  >
+                    {inner}
+                  </a>
+                ) : (
+                  inner
+                )}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

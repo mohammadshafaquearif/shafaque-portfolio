@@ -20,7 +20,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/mohammad-shafaque-arif/',
   devto: 'https://dev.to/mohammadshafaquearif',
   github: 'https://github.com/mohammadshafaquearif',
-  portfolio: 'https://www.linkedin.com/in/mohammad-shafaque-arif/',
+  portfolio: 'https://shafaque-portfolio.vercel.app/',
   company: 'ECT Cloud Solutions India Pvt Ltd',
   companyUrl: 'https://www.linkedin.com/company/ect-cloud-solutions-india-pvt-ltd',
   openToWork: {
@@ -455,6 +455,22 @@ export const profile = {
   ],
   projects: [
     {
+      title: 'TenantFlow SaaS — Multi-Tenant Backend API',
+      description:
+        'Enterprise B2B SaaS backend with schema-per-tenant PostgreSQL isolation, JWT + RBAC auth, Express API on Vercel Serverless, and production-grade security (Helmet, rate limiting, Zod validation).',
+      tags: ['Node.js', 'Express', 'PostgreSQL', 'Docker', 'AWS'],
+      color: 'from-cyan-500/20 to-violet-600/20',
+      url: 'https://tenantflow-saas-backend.vercel.app/',
+    },
+    {
+      title: 'Personal Portfolio Website',
+      description:
+        'Futuristic developer portfolio with holographic UI, React, Tailwind CSS, Framer Motion animations, tool icon stack, and live deployment on Vercel.',
+      tags: ['React', 'Tailwind CSS', 'Node.js', 'Docker'],
+      color: 'from-emerald-500/20 to-teal-600/20',
+      url: 'https://shafaque-portfolio.vercel.app/',
+    },
+    {
       title: 'Automated Multi-Environment Deployment Pipeline',
       description:
         'Architected a fully automated CI/CD system for a Node.js app — Jenkins pipelines, Docker containerization, Kubernetes deployment across dev/staging/prod, Helm charts, and Argo CD GitOps with zero-downtime rollouts.',
@@ -474,13 +490,6 @@ export const profile = {
         'Building a MERN stack chat application integrated with DevOps tooling — Jenkins CI pipelines, SonarQube code quality, with Docker & Kubernetes deployment planned.',
       tags: ['MERN', 'Jenkins', 'SonarQube', 'Docker', 'Kubernetes'],
       color: 'from-amber-500/20 to-orange-600/20',
-    },
-    {
-      title: 'Personal Portfolio Website',
-      description:
-        'Responsive portfolio with React, Tailwind CSS, Three.js 3D intro, EmailJS contact form, SEO optimization, and Netlify deployment with GitHub CI.',
-      tags: ['React', 'Three.js', 'Tailwind CSS', 'Netlify'],
-      color: 'from-emerald-500/20 to-teal-600/20',
     },
   ],
   featured: [
