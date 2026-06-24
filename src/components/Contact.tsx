@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link2, Mail, MapPin, Phone, Send, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, CheckCircle } from 'lucide-react';
 import { profile } from '../data/profile';
+import LinkedInBadge from './LinkedInBadge';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -46,7 +47,6 @@ export default function Contact() {
               { icon: Mail, label: 'Email', value: profile.email, href: `mailto:${profile.email}` },
               { icon: Phone, label: 'Phone', value: profile.phone, href: `tel:${profile.phone.replace(/\s/g, '')}` },
               { icon: MapPin, label: 'Location', value: profile.location, href: undefined },
-              { icon: Link2, label: 'LinkedIn', value: 'Connect with me', href: profile.linkedin },
             ].map((item) => (
               <div key={item.label} className="glass flex items-center gap-4 rounded-2xl p-4">
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan/10 text-cyan">
@@ -69,6 +69,7 @@ export default function Contact() {
                 </div>
               </div>
             ))}
+            <LinkedInBadge />
           </motion.div>
 
           <motion.form
