@@ -42,11 +42,29 @@ export default function Experience() {
                 <TiltCard maxTilt={8} className="glass group rounded-2xl p-6">
                   <span className="text-xs font-medium text-cyan">{exp.period}</span>
                   <h3 className="mt-1 font-display text-lg font-bold text-text">{exp.role}</h3>
-                  <p className="mt-0.5 flex items-center gap-1.5 text-sm text-muted md:justify-end">
-                    {i % 2 !== 0 && <Briefcase className="h-3.5 w-3.5 text-cyan" />}
-                    {exp.company}
-                    {i % 2 === 0 && <Briefcase className="h-3.5 w-3.5 text-cyan" />}
+                  <p
+                    className={`mt-0.5 flex items-center gap-1.5 text-sm text-muted ${
+                      i % 2 === 0 ? 'md:justify-end' : ''
+                    }`}
+                  >
+                    {i % 2 !== 0 && <Briefcase className="h-3.5 w-3.5 shrink-0 text-cyan" />}
+                    <span>
+                      {exp.company}
+                      {'type' in exp && exp.type && (
+                        <span className="text-muted/80"> · {exp.type}</span>
+                      )}
+                    </span>
+                    {i % 2 === 0 && <Briefcase className="h-3.5 w-3.5 shrink-0 text-cyan" />}
                   </p>
+                  {'location' in exp && exp.location && (
+                    <p
+                      className={`mt-1 text-xs text-muted/80 ${
+                        i % 2 === 0 ? 'md:text-right' : ''
+                      }`}
+                    >
+                      {exp.location}
+                    </p>
+                  )}
                   <p className="mt-3 text-sm leading-relaxed text-muted">{exp.description}</p>
                   <ul
                     className={`mt-4 space-y-1.5 text-sm text-muted ${

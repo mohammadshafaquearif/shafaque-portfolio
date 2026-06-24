@@ -83,25 +83,29 @@ export const profile = {
     {
       role: 'Software Developer',
       company: 'ECT Cloud Solutions India Pvt Ltd',
+      type: 'Full-time',
+      location: 'Bengaluru, Karnataka, India · On-site',
       period: 'Jul 2025 — Present',
       description:
-        'Building scalable and efficient software solutions with end-to-end application development — clean optimized code, debugging, agile workflows, and cross-functional collaboration.',
+        'Developing and deploying scalable full-stack applications using MERN stack, contributing to end-to-end product delivery in an agile environment.',
       highlights: [
-        'Contributing to full-stack development & cloud technologies',
-        'Focused on scalable architecture & performance optimization',
-        'Delivering impactful features in a fast-paced product environment',
+        'MERN stack — React, Node.js, Express & MongoDB',
+        'DevOps & cloud computing for production deployments',
+        'End-to-end product delivery in agile workflows',
       ],
     },
     {
-      role: 'Technical Consultant (Full Stack & DevOps)',
+      role: 'Technical Consultant',
       company: 'Edureka',
+      type: 'Internship',
+      location: 'Bengaluru, Karnataka, India · On-site',
       period: 'Jul 2024 — Jun 2025',
       description:
-        'Led 60% of the development lifecycle for B2C client projects. Built scalable full-stack applications and optimized deployment pipelines with Docker and Kubernetes, improving scalability by 30%.',
+        'Led 60% of the development lifecycle for B2C client projects, delivering full-stack solutions on schedule using React.js, Node.js, and MongoDB.',
       highlights: [
         'Employee of the Month — Wall of Fame recognition',
-        'Automated CI/CD processes for faster, reliable releases',
-        'Resolved critical React.js performance bottlenecks',
+        'Full-stack delivery with React.js, Node.js & MongoDB',
+        'CI/CD automation with Jenkins for faster releases',
       ],
     },
     {
