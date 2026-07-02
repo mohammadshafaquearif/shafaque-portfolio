@@ -120,18 +120,6 @@ export const profile = {
         'Continued hands-on development alongside coordination role',
       ],
     },
-    {
-      role: 'Founder & Developer',
-      company: 'Zyvotrix',
-      period: '2024 — Present',
-      description:
-        'Building Zyvotrix — a tech platform focused on practical, industry-ready learning resources. Developing the web platform, content systems, and cloud infrastructure.',
-      highlights: [
-        'Built and deployed zyvotrix.com',
-        'Full Stack, DevOps, AWS & AI program content',
-        'Learn. Build. Grow. — practical tech education vision',
-      ],
-    },
   ],
   education: [
     {
